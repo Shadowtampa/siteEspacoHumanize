@@ -29,7 +29,7 @@ export function Navbar() {
 
   return (
     <Box>
-      <header className="flex fixed top-0 h-20 w-screen shrink-0 items-center px-4 md:px-6"  
+      <header className="flex fixed top-0 h-20 w-screen shrink-0 items-center px-4 md:px-6 z-[9999]"  
       style={{ 
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         backgroundColor: "white"
