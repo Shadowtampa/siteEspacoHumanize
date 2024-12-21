@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom";
 
 import HumanizeLogo from "../assets/humanizearvore.jpg"
+import HumanizeLogoTexto from "../assets/espacoHumanizeLogoTexto.png"
 import { SVGProps } from "react";
 import { JSX } from "react/jsx-runtime";
 import { Box } from "@radix-ui/themes";
@@ -18,7 +19,7 @@ const tabs = {
   "contact": "Fale conosco",
   "work": "Como trabalhamos",
   "vagues": "Trabalhe conosco",
-  "rooms": "Espaço"
+  "ourspace": "Espaço"
 }
 
 
@@ -29,11 +30,11 @@ export function Navbar() {
 
   return (
     <Box>
-      <header className="flex fixed top-0 h-20 w-screen shrink-0 items-center px-4 md:px-6 z-[9999]"  
-      style={{ 
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        backgroundColor: "white"
-         }}>
+      <header className="flex fixed top-0 h-20 w-screen shrink-0 items-center px-4 md:px-6 z-[9999]"
+        style={{
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "white"
+        }}>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="lg:hidden">
@@ -43,8 +44,9 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="left">
             <Link to="/" className="mr-6 hidden lg:flex" >
-              <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} /> 
-              
+              <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} />
+              <img src={HumanizeLogoTexto} className={`h-${logo_x} w-${logo_y}`} />
+
               <span className="sr-only">Acme Inc</span>
             </Link>
             <div className="grid gap-2 py-6">
@@ -60,9 +62,9 @@ export function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
-        <Link to="/" className="mr-6 hidden lg:flex" >
+        <Link to="/" className="mr-6 hidden lg:flex items-center justify-center">
           <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} />
-          <span>Espaço Humanize</span>
+          <img src={HumanizeLogoTexto} className={`h-${logo_x} w-${logo_y}`} />  {/* Ajuste a margem superior aqui */}
           <span className="sr-only">Acme Inc</span>
         </Link>
         <nav className="ml-auto hidden lg:flex gap-6">
