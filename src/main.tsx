@@ -7,6 +7,7 @@ import { About } from './pages/About.tsx'
 
 import "@radix-ui/themes/styles.css";
 import { Ourspace } from './pages/Ourspace.tsx'
+import { Contact } from './pages/Contact.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="ourspace" element={<Ourspace />} />
+        <Route path="contact" element={<Contact />} />
         <Route
           path="*"
           element={
