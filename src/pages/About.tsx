@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Text } from '@radix-ui/themes';
-import * as React from 'react';
 
 export const About = () => {
   return (

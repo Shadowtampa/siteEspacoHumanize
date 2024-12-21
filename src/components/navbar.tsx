@@ -43,7 +43,8 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="left">
             <Link to="/" className="mr-6 hidden lg:flex" >
-              <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} />
+              <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} /> 
+              
               <span className="sr-only">Acme Inc</span>
             </Link>
             <div className="grid gap-2 py-6">
@@ -61,6 +62,7 @@ export function Navbar() {
         </Sheet>
         <Link to="/" className="mr-6 hidden lg:flex" >
           <img src={HumanizeLogo} className={`h-${logo_x} w-${logo_y}`} />
+          <span>Espaço Humanize</span>
           <span className="sr-only">Acme Inc</span>
         </Link>
         <nav className="ml-auto hidden lg:flex gap-6">
