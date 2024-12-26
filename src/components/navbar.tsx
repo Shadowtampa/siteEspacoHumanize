@@ -52,7 +52,6 @@ export function Navbar() {
             <div className="grid gap-2 py-6">
               {Object.entries(tabs).map(([key, value]) => (
                 <>
-                  <span>{key}</span>
                   <Link key={key} to={key} className="flex w-full items-center py-2 text-lg font-semibold">
                     {value}
                   </Link>
