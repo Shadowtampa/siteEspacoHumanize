@@ -1,6 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Box, Container, Flex, Text } from "@radix-ui/themes"
+import {  Flex, Text } from "@radix-ui/themes"
 import { Button } from "@/components/ui/button";
 // import { useState } from "react";
 

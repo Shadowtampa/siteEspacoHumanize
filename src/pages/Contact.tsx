@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Text } from '@radix-ui/themes';
+import { Box, Grid, Text } from '@radix-ui/themes';
 import { Button } from "@/components/ui/button";
 import { PhoneIcon as WhatsappIcon } from 'lucide-react'
 import { PageLayout } from '@/components/PageLayout';

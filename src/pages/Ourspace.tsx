@@ -1,5 +1,5 @@
 import { PageLayout } from '@/components/PageLayout';
-import { Box, Container, Grid, Text } from '@radix-ui/themes';
+import { Box, Grid, Text } from '@radix-ui/themes';
 
 import { Armchair } from 'lucide-react';
 import { AirVent } from 'lucide-react';
