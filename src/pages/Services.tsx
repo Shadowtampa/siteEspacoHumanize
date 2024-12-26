@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dialog"
 
 import { PhoneIcon as WhatsappIcon } from 'lucide-react'
+import { PageLayout } from "@/components/PageLayout";
 
 const offeredServices = [
   {
@@ -82,123 +83,105 @@ const offeredServices = [
 
 export const Services = () => {
 
-  // const [currentCard, setCurrentCard] = useState();
-
-  // const handleShowServiceInformation = () => {
-
-  // }
-
   const addAlphaToRgb = (rgb: string, alpha: number) => {
     return rgb.replace("rgb", "rgba").replace(")", `, ${alpha})`);
   }
 
   return (
-    <div className="flex items-center justify-center 
-    px-80 
-    py-20
-    mt-16 
-    w-screen">
+    <PageLayout
+      BoxStyle="bg-white rounded-radius-3"
+      pageSubTitle="Serviços">
+      <Carousel
+        opts={{
+          active: true,
+          align: "center"
+        }}
+        className="w-screen max-w-5xl mt-0 "
+      >
+        <CarouselContent>
+          {offeredServices.map((service) => (
+            <CarouselItem key={service.name} className="basis-1/5 min-w-[400px] ">
+              <Card className="min-w-100 overflow-hidden justify-center" style={{
+                "height": "35rem"
+                , "backgroundColor": addAlphaToRgb(service.color, 0.2)
+              }}>
+                <CardHeader className="items-center justify-center">
+                  <img src={service.img} height={150} width={150} />
+                </CardHeader>
+                <CardContent className="flex flex-col items-center justify-center p-6 h-100">
+                  <span className="font-semibold text-2xl drop-shadow-sm" style={{
+                    "textAlign": "center",
+                    "marginBottom": "0.5rem",
+                    "marginTop": "-1rem"
+                    , "color": addAlphaToRgb(service.color, 1),
+                  }}>{service.name}</span>
+                  <Flex maxWidth="270px">
+                    <Text wrap="pretty" align="center" className="text-xl font-light text-justify drop-shadow-sm">
+                      {service.description.length > 100 ? service.description.substring(0, 150) + "..." : service.description}
+                    </Text>
+                  </Flex>
 
+                  <Dialog >
+                    <DialogTrigger
+                      className=
+                      "absolute bottom-[1.5rem] text-white w-[10rem]"
 
+                      style={{
+                        "backgroundColor": addAlphaToRgb(service.color, 1)
+                        , "color": "white"
+                      }}
+                    >Saiba mais</DialogTrigger>
+                    <DialogContent className="h-[35rem]" style={{
+                      "backgroundColor": addAlphaToRgb(service.color, 1),
+                    }}
+                    >
+                      <DialogHeader className="flex flex-col items-start justify-center gap-4" style={{
+                        // "color": addAlphaToRgb(service.color, 1)
+                      }}>
+                        <DialogTitle className="text-2xl drop-shadow-sm" style={{
+                          textShadow: " addAlphaToRgb(service.color, 1)", // Efeito de luz
+                        }}>
+                          <img src={service.img} height={150} width={150} />
+                          <span className="block text-left">{service.name}</span>
+                        </DialogTitle>
+                        <DialogDescription className="text-xl">
+                          {service.description}
 
-      <Box style={{
-        background: "var(--gray-a2)",
-        borderRadius: "var(--radius-3)",
-      }}>
+                          <br />
+                          <br />
+                          <span> Gostou? Nos contate no whatsapp!</span>
+                        </DialogDescription>
+                      </DialogHeader>
 
-        <Container size="1">
-          <Carousel
-            opts={{
-              active: true,
-              align: "center"
-            }}
-            className="w-screen max-w-5xl max-h-120"
-          >
-            <CarouselContent>
-              {offeredServices.map((service) => (
-                <CarouselItem key={service.name} className="basis-1/5 min-w-[400px] ">
-                  <Card className="h-50 min-w-100 overflow-hidden justify-center" style={{
-                    "height": "30rem"
-                    , "backgroundColor": addAlphaToRgb(service.color, 0.2)
-                  }}>
-                    <CardHeader className="items-center justify-center">
-                      <img src={service.img} height={150} width={150} />
-                    </CardHeader>
-                    <CardContent className="flex flex-col items-center justify-center p-6 h-100">
-                      <span className="font-semibold text-2xl drop-shadow-sm" style={{
-                        "textAlign": "center",
-                        "marginBottom": "0.5rem",
-                        "marginTop": "-1rem"
-                        ,"color" : addAlphaToRgb(service.color, 1),
-                      }}>{service.name}</span>
-                      <Flex maxWidth="270px">
-                        <Text wrap="pretty" align="center" className="text-xl font-light text-justify drop-shadow-sm">
-                          {service.description.length > 100 ? service.description.substring(0, 100) + "..." : service.description}
-                        </Text>
-                      </Flex>
-
-                      <Dialog >
-                        <DialogTrigger
-                          className=
-                          "absolute bottom-[1.5rem] text-white w-[10rem]"
-
-                          style={{
-                            "backgroundColor": addAlphaToRgb(service.color, 1)
-                            , "color": "white"
-                          }}
-                        >Saiba mais</DialogTrigger>
-                        <DialogContent className="h-[35rem]" style={{
-                          "backgroundColor": addAlphaToRgb(service.color, 1),
-                        }}
+                      <DialogFooter className="relative">
+                        <Button
+                          asChild
+                          className="absolute bottom-[1.5rem] left-1/2 transform -translate-x-1/2 w-1/2 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold px-4 rounded-full inline-flex transition-colors duration-300"
                         >
-                          <DialogHeader className="flex flex-col items-start justify-center gap-4" style={{
-                            // "color": addAlphaToRgb(service.color, 1)
-                          }}>
-                            <DialogTitle className="text-2xl drop-shadow-sm"   style={{
-    textShadow: " addAlphaToRgb(service.color, 1)", // Efeito de luz
-  }}>
-                              <img src={service.img} height={150} width={150} />
-                              <span className="block text-left">{service.name}</span>
-                            </DialogTitle>
-                            <DialogDescription className="text-xl">
-                              {service.description}
-
-                              <br />
-                              <br />
-                              <span> Gostou? Nos contate no whatsapp!</span>
-                            </DialogDescription>
-                          </DialogHeader>
-
-                          <DialogFooter className="relative">
-                            <Button
-                              asChild
-                              className="absolute bottom-[1.5rem] left-1/2 transform -translate-x-1/2 w-1/2 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-2 px-4 rounded-full inline-flex transition-colors duration-300"
-                            >
-                              <a
-                                href={`https://api.whatsapp.com/send?phone=559191267386&text=Olá!%20gostaria%20de%20saber%20mais%20sobre%20${service.name}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <WhatsappIcon className="w-full h-5 mr-2" />
-                                <span>{service.name}</span>
-                              </a>
-                            </Button>
-                          </DialogFooter>
+                          <a
+                            href={`https://api.whatsapp.com/send?phone=559191267386&text=Olá!%20gostaria%20de%20saber%20mais%20sobre%20${service.name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <WhatsappIcon className="w-full h-5 mr-2" />
+                            <span>{service.name}</span>
+                          </a>
+                        </Button>
+                      </DialogFooter>
 
 
-                        </DialogContent>
-                      </Dialog>
+                    </DialogContent>
+                  </Dialog>
 
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </Container>
-      </Box>
-    </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </PageLayout>
   )
 }

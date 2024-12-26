@@ -8,6 +8,7 @@ import { About } from './pages/About.tsx'
 import "@radix-ui/themes/styles.css";
 import { Ourspace } from './pages/Ourspace.tsx'
 import { Contact } from './pages/Contact.tsx'
+import { PageLayout } from './components/PageLayout.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="" element={<About />} />
+        <Route path="test" element={<PageLayout BoxStyle='' pageSubTitle='Test Page' />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="ourspace" element={<Ourspace />} />
